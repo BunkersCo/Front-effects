@@ -1,5 +1,4 @@
-var canvasContainer = document.getElementById('canvasContainer');
-    var svgContainer = document.getElementById('svgContainer');
+
     var canvasAnim = bodymovin.loadAnimation({
         wrapper: canvasContainer,
         animType: 'canvas',
@@ -18,9 +17,6 @@ var canvasContainer = document.getElementById('canvasContainer');
     });
     var currentDisplay;
 
-    var switchContainer = document.getElementById('switchContainer');
-    var canvasSwitch = document.getElementById('canvasSwitch');
-    var svgSwitch = document.getElementById('svgSwitch');
 
     var canvasSwAnim = bodymovin.loadAnimation({
         wrapper: canvasSwitch,
