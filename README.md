@@ -6,3 +6,4 @@
 * ![Springloader](http://tympanus.net/Tutorials/SpringLoaders/)
 * ![MedicalSVGAnimated](https://codepen.io/airnan/pen/RazwzX)
 * ![Webslidetv](https://webslides.tv/)
+* ![ZippoCssSvg](https://codepen.io/jasesmith/pen/gxqBQV)
