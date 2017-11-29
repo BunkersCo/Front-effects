@@ -1,0 +1,30 @@
+body{
+  background-color: black;
+  margin:0;
+  overflow:hidden;
+}
+.container{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+#switchContainer{
+  width:100px;
+  height:30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+#canvasSwitch{
+  width:100%;
+  height:100%;
+  display: none;
+}
