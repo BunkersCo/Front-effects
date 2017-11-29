@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Zippo — SVG + CSS Loader/Spinner Configurator</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="code">
+  <pre><code lang="html">&lt;svg viewBox="0 0 50 50" class="spinner">
+  &lt;circle class="ring" cx="25" cy="25" r="22.5" />
+  &lt;circle class="line" cx="25" cy="25" r="22.5" />
+&lt;/svg></code></pre>
+  <pre><code lang="css">.spinner {
+  --spinner-size: <span class="spinner-size">5</span>;
+  --line-color: <span class="line-color">#0ebeff</span>;
+  --line-alpha: <span class="line-alpha">1</span>;
+  --line-size: <span class="line-size">10</span>;
+  --ring-color: <span class="ring-color">#000000</span>;
+  --ring-alpha: <span class="ring-alpha">.3</span>;
+  --ring-size: <span class="ring-size">10</span>;
+
+  font-size: calc(var(--spinner-size) * 1em);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+.spinner .line {
+  fill: none;
+  stroke: var(--line-color);
+  stroke-width: calc(var(--line-size) * 1%);
+  opacity: var(--line-alpha);
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: rotate3d(0, 0, 1, 0deg);
+  animation: 
+    2156ms spinner-arc ease-in-out infinite,
+    1829ms spinner-rotate linear infinite;
+}
+.spinner .ring {
+  fill: none;
+  stroke: var(--ring-color);
+  stroke-width: calc(var(--ring-size) * 1%);
+  opacity: var(--ring-alpha);
+}
+@keyframes spinner-rotate {
+  to { transform: rotate3d(0, 0, 1, 360deg); }
+}
+@keyframes spinner-arc {
+  from { stroke-dasharray: 0 150; stroke-dashoffset: 0; }
+  to { stroke-dasharray: 100 150; stroke-dashoffset: -140; }
+}</code></pre>
+</div>
+
+<div class="preview">
+  <svg viewBox="0 0 50 50" class="spinner">
+    <circle class="ring" cx="25" cy="25" r="22.5" />
+    <circle class="line" cx="25" cy="25" r="22.5" />
+  </svg>
+</div>
+
+<div class="controls">
+  <div>
+    <label><input type="checkbox" checked onchange="toggleDarkness()" /> <small>Toggle Darkness</small></label>
+  </div>
+  <div>
+    <input type="range" list="spinner" value="5" min="1" max="35" step="1" oninput="setProperty('.spinner-size', '--spinner-size', this.value)" /><br />
+    <small>--spinner-size: <span class="spinner-size">5</span>em</small>
+    <datalist id="spinner">
+      <option>5</option>
+    </datalist>
+  </div>
+  <div>
+    <div>
+      <input type="color" value="#0ebeff" oninput="setProperty('.line-color', '--line-color', this.value)" /><br />
+      <small>--line-color: <span class="line-color">#0ebeff</span></small>
+    </div>
+    <br />
+    <div>
+      <input type="range" list="line-alpha" value="1" min="0" max="1" step=".01" oninput="setProperty('.line-alpha', '--line-alpha', this.value)" /><br />
+      <small>--line-alpha: <span class="line-alpha">1</span></small>
+      <datalist id="line-alpha">
+        <option>1</option>
+      </datalist>
+    </div>
+    <br />
+    <div>
+      <input type="range" list="line" value="10" min="1" max="100" step="1" oninput="setProperty('.line-size', '--line-size', this.value)" /><br />
+      <small>--line-size: <span class="line-size">10</span>%</small>
+      <datalist id="line">
+        <option>10</option>
+      </datalist>
+    </div>
+  </div>
+  <div>
+    <div>
+      <input type="color" value="#000000" oninput="setProperty('.ring-color', '--ring-color', this.value)" /><br />
+      <small>--ring-color: <span class="ring-color">#000000</span></small>
+    </div>
+    <br />
+    <div>
+      <input type="range" list="ring-alpha" value=".3" min="0" max="1" step=".01" oninput="setProperty('.ring-alpha', '--ring-alpha', this.value)" /><br />
+      <small>--ring-alpha: <span class="ring-alpha">.3</span></small>
+      <datalist id="ring-alpha">
+        <option>.05</option>
+        <option>.3</option>
+      </datalist>
+    </div>
+    <br />
+    <div>
+      <input type="range" list="ring" value="10" min="1" max="100" step="1" oninput="setProperty('.ring-size', '--ring-size', this.value)" /><br />
+      <small>--ring-size: <span class="ring-size">10</span>%</small>
+      <datalist id="ring">
+        <option>10</option>
+      </datalist>
+    </div>
+  </div>
+</div>
+  
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
