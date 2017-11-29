@@ -5,3 +5,4 @@
 * ![MorphingTransition](https://tympanus.net/Development/MorphingPageTransition/)
 * ![Springloader](http://tympanus.net/Tutorials/SpringLoaders/)
 * ![MedicalSVGAnimated](https://codepen.io/airnan/pen/RazwzX)
+* ![Webslidetv](https://webslides.tv/)
